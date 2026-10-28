@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+:root {
+  --primary-magenta: #981249;
+  --primary-magenta-dark: #7a0c3a;
+  --primary-magenta-light: #b80f55;
+  --gold-primary: #d4af37;
+  --gold-dark: #b8860b;
+  --gold-light: #f3d077;
+  --ivory-bg: #fcf8f2;
+  --card-bg: #fffdf9;
+  --text-dark: #1f1f1f;
+  --text-muted: #5e4634;
+
+  font-family: 'Outfit', 'Noto Sans Telugu', 'Noto Sans Kannada', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--ivory-bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Typography */
+.font-serif {
+  font-family: 'Playfair Display', 'Cinzel', 'Noto Serif Telugu', 'Noto Serif Kannada', Georgia, serif;
+}
+
+[lang="te"] .font-serif,
+.lang-te .font-serif {
+  font-family: 'Noto Serif Telugu', 'Noto Sans Telugu', serif;
+  line-height: 1.6;
+}
+
+[lang="kn"] .font-serif,
+.lang-kn .font-serif {
+  font-family: 'Noto Serif Kannada', 'Noto Sans Kannada', serif;
+  line-height: 1.6;
+}
+
+/* Royal card texture & backgrounds */
+.bg-wedding-card {
+  background-color: #fffdf9;
+  background-image: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 80%);
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4), 0 0 30px rgba(152, 18, 73, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.7), 0 0 45px rgba(152, 18, 73, 0.35);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-pulseGlow {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+.animate-float {
+  animation: floatGentle 3s infinite ease-in-out;
+}
+
+/* Custom Scrollbar for Indian Wedding Aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fbf5eb;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #981249;
+}
+
+/* Safe Area Insets for Modern Mobile Phones (Notch & Home Bar) */
+body {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  overflow-x: hidden;
+}
+
+/* Touch target optimizations */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
